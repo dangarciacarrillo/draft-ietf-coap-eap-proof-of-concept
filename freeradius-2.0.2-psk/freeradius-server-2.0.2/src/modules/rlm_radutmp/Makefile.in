@@ -1,0 +1,13 @@
+#
+# $Id: Makefile.in,v 1.2 2006/01/22 21:46:42 nbk Exp $
+#
+
+TARGET     = @targetname@
+SRCS       = rlm_radutmp.c
+HEADERS    =
+RLM_CFLAGS = @radutmp_cflags@
+RLM_LIBS   = @radutmp_ldflags@
+
+include ../rules.mak
+
+$(LT_OBJS): $(HEADERS)

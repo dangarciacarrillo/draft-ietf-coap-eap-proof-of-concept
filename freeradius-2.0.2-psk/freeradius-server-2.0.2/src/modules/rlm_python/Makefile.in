@@ -1,0 +1,13 @@
+#
+# $Id: Makefile.in,v 1.3 2006/01/22 21:46:41 nbk Exp $
+#
+
+TARGET     = @targetname@
+SRCS       = rlm_python.c
+HEADERS    =
+RLM_LIBS   = @python_ldflags@
+RLM_CFLAGS = @python_cflags@
+
+include ../rules.mak
+
+$(LT_OBJS): $(HEADERS)

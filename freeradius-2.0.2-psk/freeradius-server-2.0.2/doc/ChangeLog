@@ -1,0 +1,74 @@
+FreeRADIUS 2.0.2 ; $Date: 2008/02/14 11:13:48 $ , urgency=medium
+	Feature improvements
+	* Added notes on how to debug the server in radiusd.conf
+	* Moved all "log_*" in radiusd.conf to log{} section.
+	  The old configurations are still accepted, though.
+	* Added ca.der target in raddb/certs/Makefile.  This is
+	  needed for importing CA certs into Windows.
+	* Added ability send raw attributes via "Raw-Attribute = 0x0102..."
+	  This is available only debug builds.  It can be used
+	  to create invalid packets! Use it with care.
+	* Permit "unlang" policies inside of Auth-Type{} sub-sections
+	  of the authenticate{} section.  This makes some policies easier
+	  to implement.
+	* "listen" sections can now have "type = proxy".  This lets you
+	  control which IP is used for sending proxied requests.
+	* Added note on SSL performance to raddb/certs/README
+
+	Bug fixes
+	* Fixed reading of "detail" files.
+	* Allow inner EAP tunneled sessions to be proxied.
+	* Corrected MySQL schemas
+	* syslog now works in log{} section.
+	* Corrected typo in raddb/certs/client.cnf
+	* Updated raddb/sites-available/proxy-inner-tunnel to
+	  permit authentication to work.
+	* Ignore zero-length attributes in received packets.
+	* Correct memcpy when dealing with unknown attributes.
+	* Corrected debugging messages in attr_rewrite.
+	* Corrected generation of State attribute in EAP.  This
+	  fixes the "failed to remember handler" issues.
+	* Fall back to DEFAULT realm if no realm was found.
+	  Based on a patch from Vincent Magnin.
+	* Updated example raddb/sites-available/proxy-inner-tunnel
+	* Corrected behavior of attr_filter to match documentation.
+	  This is NOT backwards compatible with previous versions!
+	  See "man rlm_attr_filter" for details.
+
+FreeRADIUS 2.0.1 ; Date: 2008/01/22 13:29:37  , urgency=low
+	Feature improvements
+	* "unlang" has been expanded to do less run-time expansion,
+	  and to have better handling of typed data.  See "man unlang"
+	  for documentation and new examples.
+	
+	Bug fixes
+	* The 'acct_unique' module has been updated to understand
+	  the deprecated (but still used) Client-IP-Address attribute.
+	* The EAP-MSCHAPv2 module no longer leaks MS-CHAP2-Success in
+	  packets.
+	* Fixed crash in rlm_dbm.
+	* Fixed parsing of syslog configuration.
+
+FreeRADIUS 2.0.0 ; Date: 2007/11/24 08:33:09 , urgency=low
+	Feature improvements
+	* Debugging mode is much clearer and easier to read.
+        * A new policy language makes many configurations trivial.
+	  See "man unlang" for a complete description.
+	* Virtual servers are now supported.  This permits clear separation
+	  of policies.  See raddb/sites-available/README
+	* EAP-TLS (PEAP, EAP-TTLS) and OpenSSL certificates "just work".
+	  See raddb/certs/README for details.
+	* Proxying is much more configurable than before.
+	  See proxy.conf for documentation on pools, and new config items.
+	* Full support for IPv6.
+	* Much more complete support for the RADIUS SNMP MIBs.
+	* HUP now works.  Only some modules are re-loaded,
+	  and the server configuation is *not* reloaded.
+	* "check config" option now works.  See "man radiusd"
+	* radrelay functionality is now included in the server core.
+	  See raddb/sites-available/copy-acct-to-home-server
+	* VMPS support.  It is minimal, but functional.
+	* Cleaned up internal API's and names, including library names.
+	
+	Bug fixes
+	* Many.

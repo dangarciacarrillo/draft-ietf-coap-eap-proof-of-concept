@@ -1,0 +1,13 @@
+#
+# $Id: Makefile.in,v 1.5 2006/01/22 21:46:40 nbk Exp $
+#
+
+TARGET     = @targetname@
+SRCS       = rlm_ldap.c @edir@
+HEADERS    =
+RLM_CFLAGS = @ldap_cflags@
+RLM_LIBS   = @ldap_ldflags@
+
+include ../rules.mak
+
+$(LT_OBJS): $(HEADERS)

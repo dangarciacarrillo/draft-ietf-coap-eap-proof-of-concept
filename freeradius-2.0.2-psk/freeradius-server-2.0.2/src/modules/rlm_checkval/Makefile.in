@@ -1,0 +1,14 @@
+#
+# $Id: Makefile.in,v 1.2 2006/01/22 21:46:37 nbk Exp $
+#
+
+TARGET      = @targetname@
+SRCS        = rlm_checkval.c
+HEADERS     =
+RLM_CFLAGS  = @checkval_cflags@
+RLM_LIBS    = @checkval_ldflags@
+RLM_INSTALL =
+
+include ../rules.mak
+
+$(LT_OBJS): $(HEADERS)

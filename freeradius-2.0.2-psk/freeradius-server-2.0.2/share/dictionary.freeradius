@@ -1,0 +1,18 @@
+# -*- text -*-
+#
+#	The FreeRADIUS Vendor-Specific dictionary.
+#
+# Version:	$Id: dictionary.freeradius,v 1.5 2005/08/08 22:23:36 aland Exp $
+#
+#	For a complete list of Private Enterprise Codes, see:
+#
+#	http://www.isi.edu/in-notes/iana/assignments/enterprise-numbers
+#
+
+VENDOR		FreeRADIUS			11344
+
+BEGIN-VENDOR	FreeRADIUS
+
+ATTRIBUTE	FreeRADIUS-Proxied-To			1	ipaddr
+
+END-VENDOR FreeRADIUS

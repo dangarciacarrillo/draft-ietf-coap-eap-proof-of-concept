@@ -1,0 +1,18 @@
+# -*- text -*-
+##############################################################################
+#
+#	Quiconnect VSA's.
+#
+#	$Id: dictionary.quiconnect,v 1.2 2007/06/11 15:50:34 aland Exp $
+#
+##############################################################################
+
+VENDOR		Quiconnect			14436
+
+BEGIN-VENDOR	Quiconnect
+
+ATTRIBUTE	Quiconnect-AVPair			1	string
+ATTRIBUTE	Quiconnect-VNP-Information		2	string
+ATTRIBUTE	Quiconnect-HSP-Information		3	string
+
+END-VENDOR	Quiconnect

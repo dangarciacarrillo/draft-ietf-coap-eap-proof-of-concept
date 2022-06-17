@@ -1,0 +1,28 @@
+# -*- text -*-
+##############################################################################
+#
+#	HP ProCurve VSA's
+#
+#	$Id: dictionary.hp,v 1.4 2008/02/11 13:06:42 aland Exp $
+#
+##############################################################################
+
+VENDOR		HP				11
+
+# Management authorization
+BEGIN-VENDOR	HP
+
+ATTRIBUTE	HP-Privilege-Level			1	integer
+ATTRIBUTE	HP-Command-String			2	string
+ATTRIBUTE	HP-Command-Exception-Flag		3	integer
+
+# Access control
+ATTRIBUTE	HP-Cos					40	string
+ATTRIBUTE	HP-Rate-Limit				46	integer
+
+ATTRIBUTE	HP-Bandwidth-Max-Ingress		46	integer
+ATTRIBUTE	HP-Bandwidth-Max-Egress			48	integer
+
+ATTRIBUTE	HP-Ip-Filter-Raw			61	string
+
+END-VENDOR	HP
